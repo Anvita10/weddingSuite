@@ -1,0 +1,84 @@
+@import "tailwindcss";
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Cormorant+Garamond:ital@1&family=Manrope:wght@400;500;600;700&display=swap');
+
+@theme {
+  --color-ivory: #F7F1E4;
+  --color-espresso: #2A1F14;
+  --color-gold: #C9A227;
+  --color-card: #FFFDF8;
+  --color-line: #E4D2A0;
+  --color-available: #6E9B5E;
+  --color-filling: #D98B3D;
+  --color-booked: #C9C2B2;
+
+  --font-serif: "Playfair Display", serif;
+  --font-italic: "Cormorant Garamond", serif;
+  --font-sans: "Manrope", sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-sans);
+  color: var(--color-espresso);
+  background: var(--color-ivory);
+}
+
+.font-display {
+  font-family: var(--font-serif);
+}
+
+.font-accent {
+  font-family: var(--font-italic);
+  font-style: italic;
+}
+
+input[type='range'] {
+  -webkit-appearance: none;
+  height: 5px;
+  border-radius: 999px;
+  background: #eae0c8;
+  outline: none;
+}
+input[type='range']::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: var(--color-gold);
+  border: 3px solid var(--color-card);
+  box-shadow: 0 0 0 1px var(--color-gold);
+  cursor: pointer;
+}
+input[type='range']::-moz-range-thumb {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: var(--color-gold);
+  border: 3px solid var(--color-card);
+  box-shadow: 0 0 0 1px var(--color-gold);
+  cursor: pointer;
+  border: none;
+}
+
+@layer components {
+  .input {
+    width: 100%;
+    border-radius: 0.625rem;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    background: rgba(255, 255, 255, 0.08);
+    color: #fff;
+    padding: 0.7rem 0.85rem;
+    font-size: 13.5px;
+    font-family: var(--font-sans);
+  }
+  .input::placeholder {
+    color: #c9b8ae;
+  }
+  .input:focus {
+    outline: none;
+    border-color: var(--color-gold);
+  }
+}
